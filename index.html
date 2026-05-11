@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="tr">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burak Duru | Hızlı Bağlantılar</title>
+    <link rel="stylesheet" href="links-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ </head>
+  <style>
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    body {
+        background: linear-gradient(135deg, #d1e1f8 0%, #cab2ec 50%, #9bbef6 100% );
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    #intro-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        animation: slideUp 1s ease forwards 2.5s;
+    }
+
+    .intro-content {
+        text-align: center;
+    }
+
+    .intro-text {
+        color: white;
+        font-size: 2.5rem;
+        letter-spacing: 12px;
+        font-weight: 800;
+        opacity: 0;
+        transform: scale(0.8);
+        animation: zoomInFade 1.5s ease forwards 0.5s;
+    }
+
+    @keyframes zoomInFade {
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideUp {
+        to { transform: translateY(-100%); visibility: hidden; }
+    }
+
+    .links-container {
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+    }
+    
+    .links-header .profile-circle {
+        width: 90px;
+        height: 90px;
+        background: #111;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 0 auto 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .links-header h1 { 
+        font-size: 1.5rem; 
+        color: #111; 
+        margin-bottom: 5px; 
+    }
+
+    .links-header p { 
+        font-size: 0.9rem; 
+        color: #555; 
+        margin-bottom: 30px; 
+    }
+    
+    .links-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .link-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        padding: 18px;
+        background: white;
+        color: #111;
+        text-decoration: none;
+        border-radius: 15px;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .link-item i { font-size: 1.2rem; }
+    
+    .link-item:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    
+    .shop-site:hover { background: #111; color: white; }
+
+    .shopier:hover { background: #6b3fa0; color: white; }
+
+    .whatsapp:hover { background: #25d366; color: white; }
+
+    .instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
+    
+    .links-footer {
+        margin-top: 80px;
+        font-size: 0.8rem;
+        color: #888;
+    }
+    
+    .links-footer a {
+        color: #111;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .links-footer :hover{
+        color: #0962ef;
+    }
+    
+    .links-header .profile-img {
+        width: 90px;
+        height: 90px;
+        object-fit: cover; 
+        border-radius: 50%; 
+        margin: 0 auto 15px;
+        display: block; 
+        border: 3px solid white; 
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15); 
+    }
+    
+    .links-footer {
+        margin-top: 50px;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .links-footer p {
+        font-size: 0.75rem;
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .ayliz-dev-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .ayliz-dev-brand span {
+        font-weight: 800;
+        font-size: 1.1rem;
+        color: #111;
+        letter-spacing: 1px;
+    }
+    
+    .dev-icons {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .dev-icons a {
+        color: #555;
+        font-size: 1.4rem;
+        transition: all 0.3s ease;
+    }
+    
+    .dev-icons a:hover {
+        transform: translateY(-3px);
+    }
+    
+    .dev-icons a .fa-linkedin:hover { color: #0077b5; }
+
+    .dev-icons a .fa-github:hover { color: #333; }
+    
+    @media (max-width: 600px) {
+        .links-footer {
+            margin-top: 30px;
+        }
+        .dev-icons a {
+            font-size: 1.6rem; 
+        }
+    }
+
+  </style>
+  <body>
+      <div id="intro-overlay">
+         <div class="intro-content">
+             <h1 class="intro-text">BURAK DURU</h1>
+         </div>
+     </div>
+
+    <div class="links-container">
+
+       <header class="links-header">
+            <img src="1.jpeg" alt="Burak Duru Profile" class="profile-img">
+            <h1>Burak Duru</h1>
+            <p>Kaliteyi adımlarınızda hissedin.</p>
+        </header>
+
+        <div class="links-wrapper">
+            <a href="https://burak-duru-mağaza.vercel.app" class="link-item shop-site" target="_blank">
+                <i class="fas fa-shopping-bag"></i> Koleksiyonu İncele (Ana Site)
+            </a>
+            
+            <a href="https://www.shopier.com/ozelsarii?utm_id=97760_v0_s00_e0_tv3&ext=1" class="link-item shopier" target="_blank">
+                <i class="fas fa-credit-card"></i> Shopier Mağazamız
+            </a>
+
+            <a href="https://wa.me/905365049655" class="link-item whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp Sipariş Hattı
+            </a>
+
+            <a href="https://www.instagram.com/brkcndru61" class="link-item instagram" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram'dan Takip Et
+            </a>
+        </div> 
+
+      <footer class="links-footer">
+            <p>Designed by</p>
+            <div class="ayliz-dev-brand">
+                <span>AylizDev</span>
+                <div class="dev-icons">
+                    <a href="https://www.linkedin.com/in/ayliz-azaklı-74579b318/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/merveayliz" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+  </body>
+</html>
